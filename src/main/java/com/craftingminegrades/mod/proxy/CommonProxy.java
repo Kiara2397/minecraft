@@ -1,4 +1,4 @@
-package com.fernando.itemmod.proxy;
+package com.craftingminegrades.mod.proxy;
 
 import net.minecraft.item.Item;
 

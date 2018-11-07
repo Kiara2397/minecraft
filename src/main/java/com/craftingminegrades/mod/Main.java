@@ -1,7 +1,7 @@
-package com.fernando.itemmod;
+package com.craftingminegrades.mod;
 
-import com.fernando.itemmod.proxy.CommonProxy;
-import com.fernando.itemmod.util.Reference;
+import com.craftingminegrades.mod.proxy.CommonProxy;
+import com.craftingminegrades.mod.util.Reference;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;

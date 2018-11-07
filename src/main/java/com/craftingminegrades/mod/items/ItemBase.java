@@ -1,8 +1,8 @@
-package com.fernando.itemmod.items;
+package com.craftingminegrades.mod.items;
 
-import com.fernando.itemmod.Main;
-import com.fernando.itemmod.init.ModItems;
-import com.fernando.itemmod.util.IHasModel;
+import com.craftingminegrades.mod.Main;
+import com.craftingminegrades.mod.init.ModItems;
+import com.craftingminegrades.mod.util.IHasModel;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;

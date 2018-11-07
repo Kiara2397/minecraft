@@ -1,9 +1,9 @@
-package com.fernando.itemmod.init;
+package com.craftingminegrades.mod.init;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fernando.itemmod.items.ItemBase;
+import com.craftingminegrades.mod.items.ItemBase;
 
 import net.minecraft.item.Item;
 

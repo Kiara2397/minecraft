@@ -1,7 +1,7 @@
-package com.fernando.itemmod.util.handler;
+package com.craftingminegrades.mod.util.handler;
 
-import com.fernando.itemmod.init.ModItems;
-import com.fernando.itemmod.util.IHasModel;
+import com.craftingminegrades.mod.init.ModItems;
+import com.craftingminegrades.mod.util.IHasModel;
 
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
