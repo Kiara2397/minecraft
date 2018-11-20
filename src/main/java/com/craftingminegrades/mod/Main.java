@@ -1,5 +1,6 @@
 package com.craftingminegrades.mod;
 
+import com.craftingminegrades.mod.init.ModRecipes;
 import com.craftingminegrades.mod.proxy.CommonProxy;
 import com.craftingminegrades.mod.util.Reference;
 import com.craftingminegrades.mod.world.ModWorldGen;
@@ -30,7 +31,7 @@ public class Main {
 	
 	@EventHandler
 	public static void init(FMLInitializationEvent event) {
-	
+		ModRecipes.init();
 	}
 	
 	@EventHandler
