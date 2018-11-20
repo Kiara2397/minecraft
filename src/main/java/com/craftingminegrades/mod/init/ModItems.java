@@ -12,5 +12,5 @@ public class ModItems {
 	public static final List<Item> ITEMS = new ArrayList<Item>();
 	
 	public static final Item VIBRANIUM = new ItemBase("vibranium");
-
+	public static final Item AMETHYST = new ItemBase("amethyst");
 }

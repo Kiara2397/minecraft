@@ -1,5 +1,6 @@
 //Items
 item.vibranium.name=Vibranium
+item.amethyst.name=Amethyst
 
 //Block
 tile.space_block.name=Block of Space
