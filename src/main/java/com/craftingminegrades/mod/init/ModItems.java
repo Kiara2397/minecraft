@@ -29,6 +29,8 @@ public class ModItems {
 	//Items
 	public static final Item VIBRANIUM = new ItemBase("vibranium");
 	public static final Item AMETHYST = new ItemBase("amethyst");
+	public static final Item CAP_SHIELD = new ItemBase("cap_shield");
+
 
 	//Tools
 	public static final ItemSword VIBRANIUM_SWORD = new ToolSword("vibranium_sword", MATERIAL_VIBRANIUM);

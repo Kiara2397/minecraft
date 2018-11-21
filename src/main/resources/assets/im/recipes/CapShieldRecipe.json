@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "RVR",
+        " V ",
+        "RVR"
+    ],
+    
+    "key":
+    {
+        "V":
+        {
+            "item": "im:vibranium"
+        },
+        
+          "R":
+        {
+            "item": "minecraft:redstone"
+        }
+    },
+    
+    "result":
+    {
+        "item": "im:cap_shield",
+        "count": 1
+    }
+}

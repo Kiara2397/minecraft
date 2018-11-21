@@ -1,6 +1,7 @@
 //Items
 item.vibranium.name=Vibranium
 item.amethyst.name=Amethyst
+item.cap_shield.name=Cap's Shield
 
 //Tools
 item.vibranium_sword.name=Vibranium Sword
