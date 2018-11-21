@@ -2,6 +2,13 @@
 item.vibranium.name=Vibranium
 item.amethyst.name=Amethyst
 
+//Tools
+item.vibranium_sword.name=Vibranium Sword
+item.vibranium_shovel.name=Vibranium Shovel
+item.vibranium_pickaxe.name=Vibranium Pickaxe
+item.vibranium_axe.name=Vibranium Axe
+item.vibranium_hoe.name=Vibranium Hoe
+
 //Block
 tile.space_block.name=Block of Space
 
