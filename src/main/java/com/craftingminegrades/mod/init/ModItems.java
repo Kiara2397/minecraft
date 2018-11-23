@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.craftingminegrades.mod.items.ItemBase;
+import com.craftingminegrades.mod.items.SwipperItem;
 import com.craftingminegrades.mod.items.tools.ToolAxe;
 import com.craftingminegrades.mod.items.tools.ToolHoe;
 import com.craftingminegrades.mod.items.tools.ToolPickaxe;
@@ -30,6 +31,8 @@ public class ModItems {
 	public static final Item VIBRANIUM = new ItemBase("vibranium");
 	public static final Item AMETHYST = new ItemBase("amethyst");
 	public static final Item CAP_SHIELD = new ItemBase("cap_shield");
+	public static final Item SWIPPER_WAND = new SwipperItem("swipper_wand");
+	
 
 
 	//Tools
