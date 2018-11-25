@@ -17,3 +17,9 @@ tile.space_block.name=Block of Space
 //Ore Block
 tile.amethyst_ore.name=Amethyst Ore
 tile.vibranium_ore.name=Vibranium Ore
+
+//Armors
+item.vibranium_helmet.name=Vibranium Helmet
+item.vibranium_chestplate.name=Vibranium Chestplate
+item.vibranium_leggings.name=Vibranium Leggings
+item.vibranium_boots.name=Vibranium Boots
