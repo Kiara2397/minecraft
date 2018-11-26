@@ -1,6 +1,7 @@
 package com.craftingminegrades.mod;
 
 import com.craftingminegrades.mod.init.ModRecipes;
+import com.craftingminegrades.mod.proxy.ClientProxy;
 import com.craftingminegrades.mod.proxy.CommonProxy;
 import com.craftingminegrades.mod.util.Reference;
 import com.craftingminegrades.mod.world.ModWorldGen;
@@ -20,6 +21,7 @@ public class Main {
 	
 	@Instance
 	public static Main instance;
+
 	
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
 	public static CommonProxy proxy;
@@ -27,11 +29,13 @@ public class Main {
 	@EventHandler
 	public static void PreInit(FMLPreInitializationEvent event) {
 		GameRegistry.registerWorldGenerator(new ModWorldGen(),3);
+		
 	}
 	
 	@EventHandler
 	public static void init(FMLInitializationEvent event) {
 		ModRecipes.init();
+		proxy.init();
 	}
 	
 	@EventHandler
