@@ -95,6 +95,7 @@ public class SwipperItem extends ItemBase {
 					if(usages>0) {
 						worldIn.destroyBlock(pos, true);
 						worldIn.setBlockState(pos, blockSelected,1);
+						usages--;
 						return EnumActionResult.SUCCESS;
 					}
 					Minecraft.getMinecraft().player.sendMessage(new TextComponentString("Usage must be greater than 0. Find Coal and charge!"));
