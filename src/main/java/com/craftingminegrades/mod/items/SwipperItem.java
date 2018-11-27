@@ -6,11 +6,15 @@ import javax.annotation.Nullable;
 
 import com.craftingminegrades.mod.util.handler.RegistryHandler;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
@@ -26,8 +30,10 @@ public class SwipperItem extends ItemBase {
 	
 	private int usages = 0;
 	private static String mode = "Swapping";
+	private IBlockState blockSelected = Blocks.AIR.getDefaultState();
 	private String blockSelectedName = "None";
-
+	
+	
 	public SwipperItem(String name) {
 		super(name);
 	}
@@ -66,10 +72,30 @@ public class SwipperItem extends ItemBase {
 	}
 
 	@Override
-	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {	
-        return EnumActionResult.PASS;
-    }
-	
+	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {		
+		if(!worldIn.isRemote) {
+			//Selecting Block for swap
+			if(player.isSneaking()) {
+				blockSelected = worldIn.getBlockState(pos);
+				blockSelectedName = blockSelected.getBlock().getLocalizedName();
+				Minecraft.getMinecraft().player.sendMessage(new TextComponentString("Block Selected: "+blockSelectedName));
+			}
+
+			//Swapping
+			if(Minecraft.getMinecraft().player.getHeldItemMainhand().getItem() instanceof SwipperItem) {
+				if(mode.equals("Swapping")) {
+					if(usages>0) {
+						worldIn.destroyBlock(pos, true);
+						worldIn.setBlockState(pos, blockSelected,1);
+						return EnumActionResult.SUCCESS;
+					}
+					Minecraft.getMinecraft().player.sendMessage(new TextComponentString("Usage must be greater than 0. Must charge item."));
+				}
+			}
+		}
+		return EnumActionResult.PASS;
+	}
+
 	@Override
 	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
 		super.onUpdate(stack, worldIn, entityIn, itemSlot, isSelected);
@@ -82,7 +108,7 @@ public class SwipperItem extends ItemBase {
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {	
+	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
 		return super.onItemRightClick(worldIn, playerIn, handIn);
 	}
 
