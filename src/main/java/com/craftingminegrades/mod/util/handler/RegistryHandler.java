@@ -9,8 +9,11 @@ import com.craftingminegrades.mod.util.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.world.GameType;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -60,8 +63,10 @@ public class RegistryHandler {
 	@SubscribeEvent(priority=EventPriority.NORMAL, receiveCanceled=true)
 	public static void onEvent(KeyInputEvent event) {
 		
-		KeyBinding changeModeKey = ClientProxy.changeModeKey;
+		KeyBinding changeModeKey = ClientProxy.keyBindings[0];
 		changeModeLetter = changeModeKey.getDisplayName();
+		
+		KeyBinding flyKey = ClientProxy.keyBindings[1];
 		
 		if(changeModeKey.isPressed()) {
 			if(Minecraft.getMinecraft().player.getHeldItemMainhand().getItem() instanceof SwipperItem) {
@@ -82,5 +87,37 @@ public class RegistryHandler {
 				}		
 			}
 		}
+		
+		if(flyKey.isPressed()) {
+		
+		//Flying in Survival Mode
+			if(Minecraft.getMinecraft().playerController.getCurrentGameType()==GameType.SURVIVAL) {
+			
+				boolean hasItem = false;
+				boolean has10Levels = false;
+
+				ItemStack vibranium = new ItemStack(ModItems.VIBRANIUM);
+				
+				for(int i=0; i<InventoryPlayer.getHotbarSize(); i++) {
+					if(Minecraft.getMinecraft().player.inventory.getStackInSlot(i).isItemEqual(vibranium)) {
+						hasItem = true;
+					}
+				}
+				
+				if(Minecraft.getMinecraft().player.experienceLevel>=10) {
+					has10Levels=true;
+				}
+				else {
+					Minecraft.getMinecraft().player.sendMessage(new TextComponentString("Flying costs 10 levels"));
+				}
+	
+				if(hasItem && has10Levels) {
+					Minecraft.getMinecraft().player.experienceLevel-=10;
+					Minecraft.getMinecraft().player.capabilities.allowFlying=true;
+					Minecraft.getMinecraft().player.capabilities.allowFlying=true;
+					Minecraft.getMinecraft().player.sendMessage(new TextComponentString("You can fly like in Creative Mode now"));
+				}
+			}
+		}	
 	}
 }

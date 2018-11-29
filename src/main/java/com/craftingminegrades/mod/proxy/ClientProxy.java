@@ -10,12 +10,20 @@ import net.minecraftforge.fml.client.registry.ClientRegistry;
 
 public class ClientProxy extends CommonProxy{
 	
-	public static KeyBinding changeModeKey;
+	public static KeyBinding[] keyBindings;
 	
 	@Override
 	public void init() {
-		changeModeKey = new KeyBinding("key.item.changemode", Keyboard.KEY_M, "key.immod.item");
-		ClientRegistry.registerKeyBinding(changeModeKey);
+		
+		keyBindings = new KeyBinding[2];
+		
+		keyBindings[0]= new KeyBinding("key.item.changemode", Keyboard.KEY_M, "key.immod.item");
+		keyBindings[1]= new KeyBinding("key.survival.fly", Keyboard.KEY_GRAVE, "key.immod.item");
+		
+		//Register keys
+		for(KeyBinding keys : keyBindings) {
+		ClientRegistry.registerKeyBinding(keys);
+		}
 	}
 	
 	public void registerItemRenderer(Item item, int meta, String id) {

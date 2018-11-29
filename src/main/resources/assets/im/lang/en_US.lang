@@ -27,3 +27,4 @@ item.vibranium_boots.name=Vibranium Boots
 //ModKeysConfig
 key.immod.item=im Mod Keys
 key.item.changemode=Change modes on Swap Item
+key.survival.fly=Allow to Fly in Survival
