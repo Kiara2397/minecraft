@@ -4,8 +4,10 @@ import com.craftingminegrades.mod.init.ModRecipes;
 import com.craftingminegrades.mod.proxy.ClientProxy;
 import com.craftingminegrades.mod.proxy.CommonProxy;
 import com.craftingminegrades.mod.util.Reference;
+import com.craftingminegrades.mod.util.handler.RegistryHandler;
 import com.craftingminegrades.mod.world.ModWorldGen;
 
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -26,8 +28,11 @@ public class Main {
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
 	public static CommonProxy proxy;
 	
+	static {FluidRegistry.enableUniversalBucket();}
+	
 	@EventHandler
 	public static void PreInit(FMLPreInitializationEvent event) {
+		RegistryHandler.preInitRegistries(event);
 		GameRegistry.registerWorldGenerator(new ModWorldGen(),3);
 		
 	}

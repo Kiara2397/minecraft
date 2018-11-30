@@ -1,6 +1,7 @@
 package com.craftingminegrades.mod.util.handler;
 
 import com.craftingminegrades.mod.init.ModBlocks;
+import com.craftingminegrades.mod.init.ModFluids;
 import com.craftingminegrades.mod.init.ModItems;
 import com.craftingminegrades.mod.items.SwipperItem;
 import com.craftingminegrades.mod.proxy.ClientProxy;
@@ -17,6 +18,7 @@ import net.minecraft.world.GameType;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.InputEvent.KeyInputEvent;
@@ -57,6 +59,13 @@ public class RegistryHandler {
 				((IHasModel)block).registerModels();
 			}
 		}
+	}
+	
+	public static void preInitRegistries(FMLPreInitializationEvent event)
+	{
+		ModFluids.registerFluids();
+		RenderHandler.registerCustomMeshesAndStates();
+
 	}
 
 	@SideOnly(Side.CLIENT)

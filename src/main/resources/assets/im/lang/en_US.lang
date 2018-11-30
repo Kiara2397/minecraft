@@ -12,10 +12,13 @@ item.vibranium_axe.name=Vibranium Axe
 item.vibranium_hoe.name=Vibranium Hoe
 item.vibranium_bow.name=Vibranium Bow
 
-//Block
+//Blocks
 tile.space_block.name=Block of Space
 
-//Ore Block
+//Fluids
+fluid.teleport_water=Teleport Water
+
+//Ore Blocks
 tile.amethyst_ore.name=Amethyst Ore
 tile.vibranium_ore.name=Vibranium Ore
 

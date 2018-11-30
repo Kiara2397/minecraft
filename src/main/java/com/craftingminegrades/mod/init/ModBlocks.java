@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.craftingminegrades.mod.blocks.AmethystOre;
 import com.craftingminegrades.mod.blocks.BlockBase;
+import com.craftingminegrades.mod.blocks.BlockFluid;
 import com.craftingminegrades.mod.blocks.VibraniumOre;
 
 import net.minecraft.block.Block;
@@ -21,4 +22,7 @@ public class ModBlocks {
 	//Ore Blocks
 	public static final Block AMETHYST_ORE = new AmethystOre("amethyst_ore", Material.ROCK);
 	public static final Block VIBRANIUM_ORE = new VibraniumOre("vibranium_ore", Material.ROCK);
+	
+	//Fluids
+		public static final Block TELEPORT_WATER_BLOCK = new BlockFluid("teleport_water",ModFluids.TELEPORT_WATER, Material.WATER);
 }
