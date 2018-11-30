@@ -10,6 +10,7 @@ item.vibranium_shovel.name=Vibranium Shovel
 item.vibranium_pickaxe.name=Vibranium Pickaxe
 item.vibranium_axe.name=Vibranium Axe
 item.vibranium_hoe.name=Vibranium Hoe
+item.vibranium_bow.name=Vibranium Bow
 
 //Block
 tile.space_block.name=Block of Space

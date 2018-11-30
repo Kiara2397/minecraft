@@ -1,0 +1,6 @@
+{
+    "parent": "im:item/vibranium_bow",
+    "textures": {
+        "layer0": "im:items/vibranium_bow_pulling_0"
+    }
+}

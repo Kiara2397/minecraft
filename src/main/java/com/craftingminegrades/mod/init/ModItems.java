@@ -7,6 +7,7 @@ import com.craftingminegrades.mod.items.ItemBase;
 import com.craftingminegrades.mod.items.SwipperItem;
 import com.craftingminegrades.mod.items.armor.ArmorBase;
 import com.craftingminegrades.mod.items.tools.ToolAxe;
+import com.craftingminegrades.mod.items.tools.ToolBow;
 import com.craftingminegrades.mod.items.tools.ToolHoe;
 import com.craftingminegrades.mod.items.tools.ToolPickaxe;
 import com.craftingminegrades.mod.items.tools.ToolSpade;
@@ -19,6 +20,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemAxe;
+import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemSpade;
@@ -46,7 +48,7 @@ public class ModItems {
 	public static final ItemPickaxe VIBRANIUM_PICKAXE = new ToolPickaxe("vibranium_pickaxe", MATERIAL_VIBRANIUM);
 	public static final ItemAxe VIBRANIUM_AXE = new ToolAxe("vibranium_axe", MATERIAL_VIBRANIUM);
 	public static final ItemHoe VIBRANIUM_HOE = new ToolHoe("vibranium_hoe", MATERIAL_VIBRANIUM);
-
+	public static final ItemBow VIBRANIUM_BOW = new ToolBow("vibranium_bow");
 	//Armor
 	public static final Item VIBRANIUM_HELMET = new ArmorBase("vibranium_helmet", ARMOR_MATERIAL_VIBRANIUM, 1, EntityEquipmentSlot.HEAD);
 	public static final Item VIBRANIUM_CHESTPLATE = new ArmorBase("vibranium_chestplate", ARMOR_MATERIAL_VIBRANIUM, 1, EntityEquipmentSlot.CHEST);
