@@ -76,7 +76,8 @@ public class SwipperItem extends ItemBase {
 	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {		
 		if(!worldIn.isRemote) {
 
-			//Variables for item search and reduction
+
+			//Variables for search and reduction of fuel
 			ItemStack fuelItem = this.findFuel(player);
 			boolean hasCoal = (fuelItem.getItem() instanceof ItemCoal);
 
@@ -86,20 +87,45 @@ public class SwipperItem extends ItemBase {
 				blockSelectedName = blockSelected.getBlock().getLocalizedName();
 				Minecraft.getMinecraft().player.sendMessage(new TextComponentString("Block Selected: "+blockSelectedName));
 			}
-
+			
 			//Modes
 			if(Minecraft.getMinecraft().player.getHeldItemMainhand().getItem() instanceof SwipperItem) {
-
+				
 				//Swapping
 				if(mode.equals("Swapping")) {
-					if(usages>0) {
-						worldIn.destroyBlock(pos, true);
-						worldIn.setBlockState(pos, blockSelected,1);
-						usages--;
-						return EnumActionResult.SUCCESS;
+					
+					ItemStack selBlockInInventory = new ItemStack(blockSelected.getBlock());
+					if(player.inventory.hasItemStack(selBlockInInventory)) { //checks if player has selected block in inventory
+						
+						if(usages>0) {
+							worldIn.destroyBlock(pos, true);
+							worldIn.setBlockState(pos, blockSelected,1);
+							
+							//Searches and deletes selected item from player's inventory
+							for(int i=0; i<player.inventory.getSizeInventory();i++) {
+								if(player.inventory.getStackInSlot(i).isItemEqual(selBlockInInventory)){
+									if(!player.inventory.getStackInSlot(i).isItemEqual(player.inventory.getStackInSlot(i+1))) { //Resolves bug: if they're two stacks of the same block type
+										player.inventory.decrStackSize(i, 1);
+									}
+								}
+							}
+							
+							usages--;
+							
+							return EnumActionResult.SUCCESS;
+						} 
+						else {
+							Minecraft.getMinecraft().player.sendMessage(new TextComponentString("Usage must be greater than 0. Find Coal and charge!"));
+						} 
 					}
-					Minecraft.getMinecraft().player.sendMessage(new TextComponentString("Usage must be greater than 0. Find Coal and charge!"));
+					else if (blockSelectedName.equals("None")){
+						Minecraft.getMinecraft().player.sendMessage(new TextComponentString("You haven't selected a block yet."));
+					}
+					else {
+						Minecraft.getMinecraft().player.sendMessage(new TextComponentString("You're lacking " + blockSelectedName + " in inventory."));
+					}
 				}
+
 				//Charging
 				if(mode.equals("Charging")) {
 					if(hasCoal) {
@@ -117,30 +143,23 @@ public class SwipperItem extends ItemBase {
 	}
 
 	//Checks if is fuel(coal)
-	protected boolean isFuel(ItemStack stack)
-	{
+	protected boolean isFuel(ItemStack stack) {
 		return stack.getItem() instanceof ItemCoal;
 	}
 
 	//Finds coal
-	private ItemStack findFuel(EntityPlayer player)
-	{
-		if (this.isFuel(player.getHeldItem(EnumHand.OFF_HAND)))
-		{
+	private ItemStack findFuel(EntityPlayer player) {
+		if (this.isFuel(player.getHeldItem(EnumHand.OFF_HAND))) {
 			return player.getHeldItem(EnumHand.OFF_HAND);
 		}
-		else if (this.isFuel(player.getHeldItem(EnumHand.MAIN_HAND)))
-		{
+		else if (this.isFuel(player.getHeldItem(EnumHand.MAIN_HAND))) {
 			return player.getHeldItem(EnumHand.MAIN_HAND);
 		}
-		else
-		{
-			for (int i = 0; i < player.inventory.getSizeInventory(); ++i)
-			{
+		else {
+			for (int i = 0; i < player.inventory.getSizeInventory(); ++i) {
 				ItemStack itemstack = player.inventory.getStackInSlot(i);
 
-				if (this.isFuel(itemstack))
-				{
+				if (this.isFuel(itemstack)) {
 					return itemstack;
 				}
 			}
