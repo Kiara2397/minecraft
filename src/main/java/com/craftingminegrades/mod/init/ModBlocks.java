@@ -24,5 +24,5 @@ public class ModBlocks {
 	public static final Block VIBRANIUM_ORE = new VibraniumOre("vibranium_ore", Material.ROCK);
 	
 	//Fluids
-		public static final Block TELEPORT_WATER_BLOCK = new BlockFluid("teleport_water",ModFluids.TELEPORT_WATER, Material.WATER);
+	public static final Block TELEPORT_WATER_BLOCK = new BlockFluid("teleport_water",ModFluids.TELEPORT_WATER, Material.WATER);
 }

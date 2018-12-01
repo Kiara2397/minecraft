@@ -2,8 +2,8 @@
 {
   "modid": "im",
   "name": "CraftingMineGrades Team Mod",
-  "description": "A simple mod with a new item and new block.",
-  "version": "1.0",
+  "description": "Many new items and blocks. Main feature: SwapItem.",
+  "version": "2.0",
   "mcversion": "1.12.2",
   "url": "",
   "updateUrl": "",

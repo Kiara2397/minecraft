@@ -1,5 +1,6 @@
 package com.craftingminegrades.mod;
 
+import com.craftingminegrades.mod.creativetab.ModTab;
 import com.craftingminegrades.mod.init.ModRecipes;
 import com.craftingminegrades.mod.proxy.ClientProxy;
 import com.craftingminegrades.mod.proxy.CommonProxy;
@@ -7,6 +8,7 @@ import com.craftingminegrades.mod.util.Reference;
 import com.craftingminegrades.mod.util.handler.RegistryHandler;
 import com.craftingminegrades.mod.world.ModWorldGen;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -27,6 +29,8 @@ public class Main {
 	
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
 	public static CommonProxy proxy;
+	
+	public static final CreativeTabs MOD_TAB = new ModTab();
 	
 	static {FluidRegistry.enableUniversalBucket();}
 	
