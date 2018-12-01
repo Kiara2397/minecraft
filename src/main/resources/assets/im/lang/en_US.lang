@@ -1,6 +1,5 @@
 //Items
 item.vibranium.name=Vibranium
-item.amethyst.name=Amethyst
 item.cap_shield.name=Cap's Shield
 item.swipper_wand.name=Swipper Wand
 
@@ -12,14 +11,10 @@ item.vibranium_axe.name=Vibranium Axe
 item.vibranium_hoe.name=Vibranium Hoe
 item.vibranium_bow.name=Vibranium Bow
 
-//Blocks
+//Block
 tile.space_block.name=Block of Space
 
-//Fluids
-fluid.teleport_water=Teleport Water
-
-//Ore Blocks
-tile.amethyst_ore.name=Amethyst Ore
+//Ore Block
 tile.vibranium_ore.name=Vibranium Ore
 
 //Armors

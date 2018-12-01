@@ -38,7 +38,6 @@ public class ModItems {
 
 	//Items
 	public static final Item VIBRANIUM = new ItemBase("vibranium");
-	public static final Item AMETHYST = new ItemBase("amethyst");
 	public static final Item CAP_SHIELD = new ItemBase("cap_shield");
 	public static final Item SWIPPER_WAND = new SwipperItem("swipper_wand");
 
@@ -49,6 +48,7 @@ public class ModItems {
 	public static final ItemAxe VIBRANIUM_AXE = new ToolAxe("vibranium_axe", MATERIAL_VIBRANIUM);
 	public static final ItemHoe VIBRANIUM_HOE = new ToolHoe("vibranium_hoe", MATERIAL_VIBRANIUM);
 	public static final ItemBow VIBRANIUM_BOW = new ToolBow("vibranium_bow");
+	
 	//Armor
 	public static final Item VIBRANIUM_HELMET = new ArmorBase("vibranium_helmet", ARMOR_MATERIAL_VIBRANIUM, 1, EntityEquipmentSlot.HEAD);
 	public static final Item VIBRANIUM_CHESTPLATE = new ArmorBase("vibranium_chestplate", ARMOR_MATERIAL_VIBRANIUM, 1, EntityEquipmentSlot.CHEST);
