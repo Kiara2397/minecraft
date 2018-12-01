@@ -4,9 +4,7 @@ import com.craftingminegrades.mod.Main;
 import com.craftingminegrades.mod.init.ModItems;
 import com.craftingminegrades.mod.util.IHasModel;
 
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemHoe;
-import net.minecraft.item.Item.ToolMaterial;
 
 public class ToolHoe extends ItemHoe implements IHasModel {
 	

@@ -4,7 +4,6 @@ import com.craftingminegrades.mod.Main;
 import com.craftingminegrades.mod.init.ModItems;
 import com.craftingminegrades.mod.util.IHasModel;
 
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemPickaxe;
 
 
