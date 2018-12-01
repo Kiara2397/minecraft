@@ -8,6 +8,10 @@ import net.minecraft.item.Item;
 
 public class ItemBase extends Item implements IHasModel{
 	
+	protected int usages = 0;
+	
+	protected static String mode = "Swapping";
+	
 	public ItemBase(String name) {
 		setUnlocalizedName(name);
 		setRegistryName(name);

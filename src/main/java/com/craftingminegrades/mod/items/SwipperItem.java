@@ -24,8 +24,6 @@ import net.minecraft.world.World;
 
 public class SwipperItem extends ItemBase {
 
-	private int usages = 0;
-	private static String mode = "Swapping";
 	private IBlockState blockSelected = Blocks.AIR.getDefaultState();
 	private String blockSelectedName = "None";
 
