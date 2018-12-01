@@ -60,18 +60,6 @@ public class SwipperItem extends ItemBase {
 		SwipperItem.mode = mode;
 	}
 
-
-	@Override
-	public boolean canItemEditBlocks() {
-		return true;
-	}
-
-	@Override
-	public Item setMaxStackSize(int maxStackSize) {
-		maxStackSize = 1;
-		return super.setMaxStackSize(1);
-	}
-
 	@Override
 	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {		
 		if(!worldIn.isRemote) {
@@ -135,6 +123,9 @@ public class SwipperItem extends ItemBase {
 						}
 						usages = usages + 5;
 					}
+					else {
+						Minecraft.getMinecraft().player.sendMessage(new TextComponentString("You don't have any coal in your inventory"));
+					}
 				}
 			}
 
@@ -166,22 +157,6 @@ public class SwipperItem extends ItemBase {
 
 			return ItemStack.EMPTY;
 		}
-	}
-
-	@Override
-	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
-		super.onUpdate(stack, worldIn, entityIn, itemSlot, isSelected);
-	}
-
-
-	@Override
-	public int getItemBurnTime(ItemStack itemStack) {
-		return super.getItemBurnTime(itemStack);
-	}
-
-	@Override
-	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
-		return super.onItemRightClick(worldIn, playerIn, handIn);
 	}
 
 }
