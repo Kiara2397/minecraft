@@ -27,6 +27,7 @@ This item, if right clicked with shift pressed, will select the block you are cu
 
 # Authors
 Fernando González
+
 Kiara Rodríguez
 
 Specs design by: Josian A. Velez Ramos
